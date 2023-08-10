@@ -1,0 +1,24 @@
+/* eslint-disable class-methods-use-this */
+import Vec from './Vec.js'; 
+
+export default class Coin {
+  constructor(pos, basePos, wobble) {
+    this.pos = pos;
+    this.basePos = basePos;
+    this.wobble = wobble;
+  }
+
+  get type() { return 'coin'; }
+
+  static create(pos) {
+    const basePos = pos.plus(new Vec(0.2, 0.1));
+    return new Coin(
+      basePos,
+      basePos,
+      Math.random() * Math.PI * 2,
+    );
+  }
+}
+
+Coin.prototype.size = new Vec(0.6, 0.6);
+
