@@ -44,19 +44,24 @@ $(document).ready(function() {
     }
 
     #controls {
+      border: 1px solid red;
+      width: 600px;
       position: absolute;
       margin-top: 450px;
     }
 
     .control {
       border: 1px solid;
-      width: 150px;
+      width: 186px;
       height: 100px;
       float: left;
       text-align: center;
       display: table;
     }
 
+    #up {
+      margin-left: 30px;
+    }
 
   </style>
   <body>
@@ -67,9 +72,9 @@ $(document).ready(function() {
 
 
   <div id="controls">
-    <div class="control" id="left"><</div>
-    <div class="control" id="right">></div>
-    <div class="control" id="up">^</div>  
+    <div class="control" id="left"></div>
+    <div class="control" id="right"></div>
+    <div class="control" id="up"></div>  
   </div>
 
 </html>
