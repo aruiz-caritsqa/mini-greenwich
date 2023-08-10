@@ -3,11 +3,81 @@
   <script type="module" src="code/16_game.js"></script>
   <script type="module" src="code/17_canvas.js"></script>
   <script type="module" src="code/levels.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script>
 
+var setint  = '';
+$(document).ready(function() {
+  $('#left').on('mousedown',function (e) {
+    clearInterval(setint);
+    setint = setInterval(function () { window.dispatchEvent(new KeyboardEvent('keydown', {'key': 'ArrowLeft'})); },50);
+  });
+  $('#left').on("mouseleave mouseup", function () {
+    clearInterval(setint);
+    window.dispatchEvent(new KeyboardEvent('keyup', {'key': 'ArrowLeft'}));
+  });
+
+
+  $('#right').on('mousedown',function (e) {
+    clearInterval(setint);
+    setint = setInterval(function () { window.dispatchEvent(new KeyboardEvent('keydown', {'key': 'ArrowRight'})); },50);
+  });
+  $('#right').on("mouseleave mouseup", function () {
+    clearInterval(setint);
+    window.dispatchEvent(new KeyboardEvent('keyup', {'key': 'ArrowRight'}));  });
+  
+
+  $('#up').on('mousedown',function (e) {
+    clearInterval(setint);
+    setint = setInterval(function () { window.dispatchEvent(new KeyboardEvent('keydown', {'key': 'ArrowUp'})); },50);
+  });
+  $('#up').on("mouseleave mouseup", function () {
+    clearInterval(setint);
+    window.dispatchEvent(new KeyboardEvent('keyup', {'key': 'ArrowUp'}));
+  });
+});
+  </script>
+
+  <style>
+    #controls {
+      position: absolute;
+      margin-top: 450px;
+    }
+
+    .control {
+      border: 1px solid;
+      width: 100px;
+      height: 100px;
+      float: left;
+      text-align: center;
+      display: table;
+    }
+
+    .space {
+      width: 300px;
+      height: 100px;
+      float: left;
+    }
+
+    .control span {
+      height: 100px;
+    width: 100%;
+      display: table-cell;
+      vertical-align: middle;
+    }
+  </style>
   <body>
     <script type="text/javascript">
         var playerName = "{{ playerName }}";
     </script>
   </body>
-  
+
+
+  <div id="controls">
+    <div class="control" id="left"><span><</span></div>
+    <div class="control" id="right"><span>></span></div>
+    <div class="space"></div>
+    <div class="control" id="up"><span>^</span></div>  
+  </div>
+
 </html>

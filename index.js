@@ -12,4 +12,4 @@ app.get('/:player', (req, res) => {
   const rendered = Mustache.render(template, { playerName: req.params.player });
   res.send(rendered);
 });
-app.listen(8080);
+app.listen(3000);
