@@ -39,6 +39,10 @@ $(document).ready(function() {
   </script>
 
   <style>
+    body, html {
+        user-select: none;
+    }
+
     #controls {
       position: absolute;
       margin-top: 450px;
@@ -53,12 +57,6 @@ $(document).ready(function() {
       display: table;
     }
 
-    #up {
-
-      margin-left: 20px;
-
-    }
-
 
   </style>
   <body>
@@ -69,10 +67,9 @@ $(document).ready(function() {
 
 
   <div id="controls">
-    <div class="control" id="left"></div>
-    <div class="control" id="right"></div>
-
-    <div class="control" id="up"></div>  
+    <div class="control" id="left"><</div>
+    <div class="control" id="right">></div>
+    <div class="control" id="up">^</div>  
   </div>
 
 </html>
