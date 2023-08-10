@@ -8,30 +8,30 @@
 
 var setint  = '';
 $(document).ready(function() {
-  $('#left').on('mousedown',function (e) {
+  $('#left').on('touchstart',function (e) {
     clearInterval(setint);
     setint = setInterval(function () { window.dispatchEvent(new KeyboardEvent('keydown', {'key': 'ArrowLeft'})); },50);
   });
-  $('#left').on("mouseleave mouseup", function () {
+  $('#left').on("touchend", function () {
     clearInterval(setint);
     window.dispatchEvent(new KeyboardEvent('keyup', {'key': 'ArrowLeft'}));
   });
 
 
-  $('#right').on('mousedown',function (e) {
+  $('#right').on('touchstart',function (e) {
     clearInterval(setint);
     setint = setInterval(function () { window.dispatchEvent(new KeyboardEvent('keydown', {'key': 'ArrowRight'})); },50);
   });
-  $('#right').on("mouseleave mouseup", function () {
+  $('#right').on("touchend", function () {
     clearInterval(setint);
     window.dispatchEvent(new KeyboardEvent('keyup', {'key': 'ArrowRight'}));  });
   
 
-  $('#up').on('mousedown',function (e) {
+  $('#up').on('touchstart',function (e) {
     clearInterval(setint);
     setint = setInterval(function () { window.dispatchEvent(new KeyboardEvent('keydown', {'key': 'ArrowUp'})); },50);
   });
-  $('#up').on("mouseleave mouseup", function () {
+  $('#up').on("touchend", function () {
     clearInterval(setint);
     window.dispatchEvent(new KeyboardEvent('keyup', {'key': 'ArrowUp'}));
   });
@@ -74,10 +74,10 @@ $(document).ready(function() {
 
 
   <div id="controls">
-    <div class="control" id="left"><span>&nbsp;</span></div>
-    <div class="control" id="right"><span>&nbsp;</span></div>
+    <div class="control" id="left"><span><</span></div>
+    <div class="control" id="right"><span>></span></div>
     <div class="space"></div>
-    <div class="control" id="up"><span>&nbsp;</span></div>  
+    <div class="control" id="up"><span>^</span></div>  
   </div>
 
 </html>
